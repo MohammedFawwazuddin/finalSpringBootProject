@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Favorite Authors</title>
+</head>
+<body>
+    <h2>Favorite Authors</h2>
+    <ul>
+        <th:block th:each="author : ${favoriteAuthors}">
+            <li th:text="${author.name}"></li>
+        </th:block>
+    </ul>
+    <a href="/forum/userProfile">Back to User Profile</a>
+    
+    <!-- Add a link to return to the user profile -->
+    <h2><a class="favorite-link" href="/forum/userProfile">Back to User Profile</a></h2>
+</body>
+</html>

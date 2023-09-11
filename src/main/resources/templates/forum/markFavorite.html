@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+     <h2>Favorite Authors</h2>
+<ul>
+    <th:block th:each="author : ${favoriteAuthors}">
+        <li>
+            <span th:text="${author.name}"></span>
+            <form th:action="@{/forum/user/removeFavorite}" method="post">
+                <input type="hidden" name="authorId" th:value="${author.id}" />
+                <button type="submit">Remove Favorite</button>
+            </form>
+        </li>
+    </th:block>
+</ul>
+
+</body>
+</html>

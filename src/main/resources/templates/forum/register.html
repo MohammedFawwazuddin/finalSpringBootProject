@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TalentSprint Cycle Shop</title>
+<style>
+    /* Body Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0; /* Background color */
+        color: #333; /* Text color */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Header Styles */
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        color: #000; /* Header color */
+        margin-bottom: 20px;
+    }
+
+    /* Form Styles */
+    form {
+        background-color: #fff; /* Form background color */
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #333; /* Label text color */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc; /* Border color */
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: #f8f8f8; /* Input background color */
+        color: #333; /* Text color */
+    }
+
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        background-color: purple; /* Button background color */
+        color: #fff; /* Button text color */
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3; /* Button background color on hover */
+    }
+
+    .error-message {
+        color: #f00; /* Error message text color */
+    }
+</style>
+
+</head>
+<body>
+    <h1>Login!</h1>
+    <form method="post" action="#" th:action="@{/forum/register}" th:object="${registrationForm}">
+        <p class="error-message" th:text="${message}">Correct username and password</p>
+        <label for="username">Username</label><br>
+        <input type="text" name="username" id="username" th:field="*{username}"><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="password" th:field="*{password}"><br>
+        <label for="passwordrepeat">Repeat Password</label><br>
+        <input type="password" name="repeatPassword" id="repeatPassword" th:field="*{repeatPassword}"><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

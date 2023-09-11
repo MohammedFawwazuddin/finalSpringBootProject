@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Favorite Authors</title>
+</head>
+<body>
+    <h2>Muted Authors</h2>
+    <ul>
+    <th:block th:each="author : ${mutedAuthors}">
+        <li>
+            <span th:text="${author.name}"></span>
+            <form th:action="@{/forum/user/removeMuted}" method="post">
+                <input type="hidden" name="authorId" th:value="${author.id}" />
+                <button type="submit">Remove Favorite</button>
+            </form>
+        </li>
+    </th:block>
+	</ul>
+    <a href="/forum/userProfile">Back to User Profile</a>
+</body>
+</html>
